@@ -1,0 +1,93 @@
+@import './variables.scss';
+
+.Row{
+  display: flex;
+  align-items: center;
+}
+
+@mixin fontFallback($font: $mainFont) {
+  font-family: $font, 'sans-serif';
+}
+
+@mixin headline($font: $mainFont) {
+  @include fontFallback($font);
+  font-size: 32px;
+  letter-spacing: 1px;
+  line-height: 42px;
+  word-wrap: break-word;
+}
+
+@mixin title($font: $mainFont) {
+  @include fontFallback($font);
+  font-size: 28px;
+  letter-spacing: 0.5px;
+  line-height: 38px;
+  word-wrap: break-word;
+}
+
+@mixin subHeader($font: $mainFont) {
+  @include fontFallback($font);
+  font-size: 20px;
+  letter-spacing: 0.25px;
+  line-height: 30px;
+  word-wrap: break-word;
+}
+
+@mixin body($font: $mainFont) {
+  @include fontFallback($font);
+  font-size: 16px;
+  letter-spacing: 0.25px;
+  line-height: 26px;
+  word-wrap: break-word;
+}
+
+@mixin caption($font: $mainFont) {
+  @include fontFallback($font);
+  font-size: 12px;
+  letter-spacing: 0.25px;
+  line-height: 22px;
+  word-wrap: break-word;
+}
+
+@mixin small($font: $mainFont) {
+  @include fontFallback($font);
+  font-size: 10px;
+  letter-spacing: 0.25px;
+  line-height: 22px;
+  word-wrap: break-word;
+}
+
+// shadows
+@mixin smallBoxShadow {
+  box-shadow: 0px 2px 4px 0px rgba($black, 0.1);
+}
+
+@mixin mediumBoxShadow {
+  box-shadow: 0px 2px 10px 0px rgba($black, 0.15);
+}
+
+@mixin largeBoxShadow {
+  box-shadow: 0px 2px 30px 2px rgba($black, 0.2);
+}
+
+//inputs height
+@mixin normalInputHeight($color: $primary) {
+  color: $color;
+  height: 64px;
+}
+
+@mixin mediumInputHeight($color: $primary) {
+  color: $color;
+  height: 48px;
+}
+
+@mixin thinInputHeight($color: $primary) {
+  color: $color;
+  height: 32px;
+}
+
+@mixin arrangedInputHeight($color: $primary) {
+  color: $secondary;
+  height: 40px;
+}
+

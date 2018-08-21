@@ -1,1 +1,28 @@
-$red : red;
+$black: #021411;
+$white: #ffffff;
+$gray: #677270;
+$snow: #e5e7e7;
+$lightGray: #b3b8b7;
+$primary: rgba($black, 0.9);
+$secondary: rgba($black, 0.6);
+$disabled: rgba($black, 0.3);
+
+// vars
+$dtWidth: 1168px;
+$desktop-padding-horizon: 150px;
+
+$bold: 600;
+
+// z-index
+$negativeZIndex: -1;
+$nullZIndex: 0;
+$lowestZIndex: 50;
+$lowerZIndex: 100;
+$lowZIndex: 150;
+$mediumZIndex: 200;
+$highZIndex: 250;
+$higherZIndex: 300;
+$highestZIndex: 350;
+
+$mainFont: 'Hiragino Sans';
+$subFont: 'Quicksand';
