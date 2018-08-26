@@ -5,8 +5,14 @@
   align-items: center;
 }
 
+.Ad-banner {
+  width: 730px;
+  height: 90px;
+  margin-top: 25px;
+  background: palevioletred;
+}
 @mixin fontFallback($font: $mainFont) {
-  font-family: $font, 'sans-serif';
+  font-family: $font, 'sans-seri';
 }
 
 @mixin headline($font: $mainFont) {
@@ -35,10 +41,11 @@
 
 @mixin body($font: $mainFont) {
   @include fontFallback($font);
-  font-size: 16px;
+  font-size: 14px;
   letter-spacing: 0.25px;
-  line-height: 26px;
+  line-height: 20px;
   word-wrap: break-word;
+  text-decoration: none;
 }
 
 @mixin caption($font: $mainFont) {
