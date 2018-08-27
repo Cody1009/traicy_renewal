@@ -4,9 +4,21 @@
 @import "./variables";
 @import "./mixins.scss";
 
+//#######common####
+
+.content-title-common {
+  display: inline-block;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  @include body;
+  color: $black;
+  width: 100%;
+}
+
 body {
   background: $paleBlue;
-  width: 100%;
+  // TODO: set viewport width 1520px
+  width: 1520px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,17 +26,17 @@ body {
 
 // ################ header ###############
 .header {
-  background: $white;
   width: 100%;
+  background: $white;
 
-  @media all and(min-width: $dtWidth) {
-    height: 240px;
-    padding: 20px $desktop-padding-horizon;
-  }
+  height: 240px;
+  padding: 20px $desktop-padding-horizon;
+  margin: 0 auto;
 }
 
 .Row {
   @extend .Row;
+
   align-items: flex-start;
   justify-content: space-between;
 }
@@ -121,7 +133,484 @@ body {
 
 .menu-text {
   @include body;
+  display: inline-block;
   text-decoration: none;
   color: $black;
   font-weight: $bold;
+}
+
+// ########## Contents #########
+
+.sky-background {
+  //background-image: url("data:image/jpeg;base64,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");
+}
+
+.contents-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 30px $desktop-padding-horizon 40px $desktop-padding-horizon;
+  margin: 0 auto;
+}
+
+.center-contents {
+  width: 865px;
+}
+
+.top-articles-container {
+  width: 100%;
+  height: 430px;
+  background: $white;
+}
+
+.tabs-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tab-text {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40px;
+  width: 100%;
+  max-width: 124px;
+  color: $white;
+  @include body;
+  background: $blue;
+  border-right: $white solid 2px;
+  // TODO: check php file and see how tabs are focused
+  &:active {
+    background: $white;
+    color: $black;
+  }
+  &:last-child {
+    border: none;
+  }
+}
+
+.articles-content-row {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 20px 30px 30px 25px;
+}
+
+.article-titles {
+  max-width: 585px;
+  width: 90%;
+}
+
+.content-title {
+  @extend .content-title-common;
+  @include title-border-bottom;
+  width: 90%;
+}
+
+.featured-article {
+  max-width: 195px;
+}
+
+.image-container {
+  background: $paleBlue;
+  width: 100%;
+  height: 130px;
+  margin-bottom: 10px;
+}
+
+.featured-article-title {
+  @include body;
+  display: inline-block;
+  color: $black;
+  margin-bottom: 70px;
+}
+
+.arrow-attempt {
+  display: inline-flex;
+  align-items: center;
+}
+
+.yellow-angle {
+  color: $yellow;
+  font-size: 14px;
+  margin-right: 2px;
+}
+
+.attempt-text {
+  @extend .featured-article-title;
+  margin-bottom: 0;
+}
+
+.middle-talk-container {
+  background: $white;
+  width: 100%;
+  max-width: 865px;
+  height: 360px;
+  margin-top: 25px;
+}
+
+.tab-text-talk {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: $lightBlue;
+  height: 40px;
+  min-width: 174px;
+  @include body;
+  padding: 0 66px 0 66px;
+  color: $white;
+  border-right: $white solid 2px;
+  &:active {
+    background: $white;
+    color: $black;
+  }
+  &:last-child {
+    border: none;
+  }
+}
+
+.tab-text-wide {
+  @extend .tab-text-talk;
+  padding: 0 92px;
+}
+
+.traicy-talk-container {
+  max-width: 865px;
+  width: 100%;
+  padding: 3px;
+}
+
+.traicy-talk-contents {
+  background: $paleBlue;
+  padding: 2px 5px 6px 5px;
+  height: 100%;
+}
+
+.tabs-row-talk {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.talk-tab-left {
+  @extend .tabs-row-talk;
+  justify-content: flex-start;
+}
+
+.tab-title {
+  @include subHeader($subFont);
+  color: $blue;
+  margin-right: 36px;
+}
+
+.traicy-talk-tab {
+  display: inline-block;
+  background: $paleBlue;
+  color: $blue;
+  @include body;
+  height: 40px;
+  margin-right: 20px;
+  padding: 10px 10px 0 10px;
+  border-radius: 3px;
+  &:active {
+    background: $white;
+    color: $black;
+  }
+}
+
+.arrow-attempt-row {
+  @extend .arrow-attempt;
+  min-width: 250px;
+}
+
+.attempt-text-talk {
+  @extend .attempt-text;
+  width: 100%;
+}
+
+.talk-contents-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: $white;
+  padding: 26px 24px;
+}
+
+.content-title-talk {
+  @extend .content-title;
+  margin-bottom: 12px;
+  margin-right: 10px;
+}
+
+.angle-icon {
+  font-size: 30px;
+  color: $lightBlue;
+  cursor: pointer;
+}
+
+.talk-contents-left {
+  margin-left: 14px;
+  width: 330px;
+}
+
+.talk-contents-right {
+  margin-right: 14px;
+  width: 330px;
+}
+
+.talk-contents-row {
+  display: inline-flex;
+  align-items: center;
+}
+
+.talk-text-icon-row {
+  display: inline-flex;
+  align-items: flex-start;
+}
+
+.comment-icon {
+  color: $blue;
+}
+
+.comment-num {
+  @include body;
+  color: $blue;
+  margin-left: 6px;
+}
+
+//####### イベントキャンペーン一覧######
+
+.events-campaigns-container {
+  width: 100%;
+  margin-top: 40px;
+}
+
+.headline-row {
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 28px;
+}
+
+.headline-left {
+  display: inline-flex;
+  align-items: center;
+}
+
+.headline-en {
+  @include title;
+  color: $black;
+  margin-right: 22px;
+}
+
+.headline-ja {
+  @include body;
+  color: $black;
+}
+
+.headline-right {
+  display: inline-flex;
+  align-items: center;
+}
+
+.headline-tab {
+  display: inline-block;
+  @include body;
+  color: $black;
+  margin-left: 26px;
+  height: 26px;
+  &:active {
+    border-bottom: $black solid 3px;
+  }
+}
+
+.article-cards-list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.article-card {
+  @extend .Article-card;
+  margin-bottom: 20px;
+}
+
+.article-image {
+  width: 100%;
+  height: 180px;
+  background: $blue;
+}
+.article-description {
+  padding: 18px 24px 24px 24px;
+}
+
+.article-card-title {
+  @include body;
+  color: $black;
+  display: inline-block;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.article-info-row {
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+}
+
+.date {
+  @include caption;
+  color: $gray;
+  margin-right: 8px;
+  min-width: 100px;
+}
+
+.calender-icon {
+  font-size: 12px;
+  color: $gray;
+  margin-right: 64px;
+}
+
+.time-limit {
+  @include caption;
+  color: $gray;
+  font-weight: $bold;
+  min-width: 56px;
+}
+
+.campaign-attempt-layout {
+  display: inline-flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.ad-infos-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 35px;
+}
+
+.banner-advertizement-bottom {
+  @extend .Ad-banner;
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+.information-container {
+  width: 100%;
+  height: 315px;
+  background: white;
+  padding: 30px;
+}
+
+.info-title-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 26px;
+}
+
+.info-title-en {
+  @include title;
+  color: $blue;
+  margin-right: 24px;
+}
+
+.info-title-ja {
+  @include body;
+  color: $blue;
+}
+
+.info-content {
+  @extend .content-title-common;
+  @include title-border-bottom;
+}
+
+// ######### サイドバー ########
+
+.right-contents {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-card-ad {
+  @extend .Ad-card;
+  margin-bottom: 25px;
+}
+
+.popular-articles {
+  width: 100%;
+  padding: 20px 18px;
+  background: $white;
+  margin-top: 16px;
+  margin-bottom: 25px;
+}
+
+.small-popular-article {
+  display: inline-flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.small-popular-article-photo {
+  width: 110px;
+  height: 80px;
+  position: relative;
+  background: $lightGray;
+}
+
+.popularity-tag{
+  width: 20px;
+  height: 20px;
+  background: $lightBlue;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.small-popular-article-text{
+  @include caption;
+  color: $black;
+  width: 140px;
+  margin-left: 10px;
+}
+
+.sidebar-vertical-ad{
+  @extend .Ad-sidebar-vertical;
+  margin-bottom: 25px;
+}
+
+
+
+//###### フッター ######
+
+.footer {
+  width: 100%;
+  height: 120px;
+  padding: 25px $desktop-padding-horizon 35px $desktop-padding-horizon;
+  background: $white;
+}
+
+.footer-menu-row {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer-menu {
+  @include caption;
+  color: $gray;
+  margin-right: 10px;
+  margin-bottom: 12px;
+}
+
+.copyright {
+  @include caption;
+  color: $gray;
 }

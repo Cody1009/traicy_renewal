@@ -1,6 +1,6 @@
-$black: #021411;
+$black: #313131;
 $white: #ffffff;
-$gray: #677270;
+$gray: #313131;
 $snow: #e5e7e7;
 $lightGray: #EEEEEE;
 $primary: rgba($black, 0.9);
@@ -10,9 +10,11 @@ $disabled: rgba($black, 0.3);
 $blue:#245BA7;
 $lightBlue:#459FE3;
 $paleBlue:#E8EFF8;
+$yellow:#E79B2D;
 // vars
 $dtWidth: 1168px;
 $desktop-padding-horizon: 150px;
+$dtCenterContents: 865px;
 
 $bold: 600;
 
@@ -28,4 +30,4 @@ $higherZIndex: 300;
 $highestZIndex: 350;
 
 $mainFont: 'Hiragino Kaku Gothic Pro';
-$subFont: 'Quicksand';
+$subFont: 'OCRB';
