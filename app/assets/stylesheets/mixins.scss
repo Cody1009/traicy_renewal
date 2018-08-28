@@ -41,7 +41,7 @@
 
 @mixin headline($font: $mainFont) {
   @include fontFallback($font);
-  font-size: 32px;
+  font-size: 26px;
   letter-spacing: 1px;
   line-height: 42px;
   word-wrap: break-word;
@@ -66,6 +66,14 @@
   line-height: 38px;
   word-wrap: break-word;
   font-weight: $bold;
+}
+
+@mixin smallTitle($font: $mainFont) {
+  @include fontFallback($font);
+  font-size: 17px;
+  letter-spacing: 0.5px;
+  line-height: 28px;
+  word-wrap: break-word;
 }
 
 @mixin body($font: $mainFont) {
