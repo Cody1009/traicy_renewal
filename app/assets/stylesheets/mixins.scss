@@ -12,12 +12,21 @@
   margin-top: 25px;
   background: palevioletred;
 }
+
+.Ad-banner-small{
+  height: 75px;
+  width: 380px;
+  border-radius: 5px;
+  background: palegoldenrod;
+}
 .Ad-card{
   width: 100%;
   max-width: 300px;
   height: 250px;
   background: palegreen;
 }
+
+
 
 .Ad-sidebar-vertical{
   height: 600px;
@@ -37,6 +46,13 @@
 
 @mixin fontFallback($font: $mainFont) {
   font-family: $font, 'sans-serif';
+}
+@mixin articleTitle($font: $mainFont) {
+  @include fontFallback($font);
+  font-size: 30px;
+  letter-spacing: 1.5px;
+  line-height: 46px;
+  word-wrap: break-word;
 }
 
 @mixin headline($font: $mainFont) {
@@ -86,6 +102,25 @@
   font-weight: $bold;
 }
 
+@mixin contentsDefault($font: $mainFont) {
+  @include fontFallback($font);
+  font-size: 17px;
+  letter-spacing: 0.4px;
+  line-height: 24px;
+  word-wrap: break-word;
+  text-decoration: none;
+  color: $black;
+}
+
+@mixin contentsSmall($font: $mainFont) {
+  @include fontFallback($font);
+  font-size: 14px;
+  letter-spacing: 0.25px;
+  line-height: 20px;
+  word-wrap: break-word;
+  text-decoration: none;
+  color: $black;
+}
 
 @mixin caption($font: $mainFont) {
   @include fontFallback($font);

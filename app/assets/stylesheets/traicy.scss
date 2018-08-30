@@ -591,7 +591,7 @@ body {
   margin-top: 20px;
 }
 
-.sidebar-tag {
+.white-tag {
   display: inline-flex;
   align-items: center;
   padding: 10px;
@@ -608,11 +608,11 @@ body {
   margin-right: 4px;
 }
 
-.sidebar-tag-text {
+.white-tag-text {
   @include caption;
   color: $black;
 }
-.sidebar-tag-anchor {
+.white-tag-anchor {
   position: absolute;
   top: 0;
   left: 0;
@@ -699,7 +699,7 @@ body {
   width: 60px;
   padding: 5px 10px;
   border-radius: 0 20px 20px 0;
-  color:$white;
+  color: $white;
   font-size: 12px;
   font-family: $mainFont;
   position: absolute;
@@ -759,4 +759,305 @@ body {
 .copyright {
   @include caption;
   color: $gray;
+}
+
+//###### 記事内容 コンポーネント ######
+
+.article-container {
+  width: 100%;
+  padding: 40px;
+  background: $white;
+}
+
+.article-content-title {
+  @include articleTitle;
+  color: $black;
+  font-weight: $bold;
+  margin-bottom: 30px;
+}
+
+.article-content-author-row {
+  width: 100%;
+  display: inline-flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.article-created-at {
+  @include contentsSmall;
+}
+
+.article-content-link {
+  @include contentsSmall;
+  color: $lightBlue;
+}
+
+.article-content-image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.article-content-image {
+  height: 400px;
+  width: 600px;
+  background: palegreen;
+  margin-bottom: 20px;
+}
+
+.article-image-caption {
+  @include contentsSmall;
+}
+
+.article-table-contents {
+  width: 785px;
+  padding: 20px 24px;
+  background: $paleBlue;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.table-of-contents-row {
+  @extend .Row;
+  justify-content: flex-start;
+}
+
+.vertical-bar {
+  height: 22px;
+  width: 4px;
+  margin-right: 12px;
+  margin-bottom: 18px;
+  background: $blue;
+}
+
+.table-of-contents-head {
+  @include contentsDefault;
+  font-weight: $bold;
+}
+
+.table-of-contents-text {
+  @include contentsDefault;
+  color: $lightBlue;
+  margin-bottom: 10px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.article-content-text {
+  @include contentsDefault;
+  color: $black;
+}
+
+.article-text-container {
+  width: 100%;
+  margin: 30px 0 40px 0;
+}
+
+.next-article-row {
+  @extend .Row;
+  display: inline-flex;
+}
+
+.next-article-link {
+  @include contentsDefault;
+  color: $lightBlue;
+}
+
+.pagination-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.pagination-angle {
+  color: $black;
+  font-size: 17px;
+}
+
+.pagination-box {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin: 0 4px;
+  background: $white;
+  color: $black;
+  @include contentsDefault;
+  text-decoration: none;
+  border: $lightGray solid 1px;
+
+  &:active {
+    background: $blue;
+    color: $white;
+    border: $blue solid 1px;
+  }
+}
+
+.pagination-text{
+  @include contentsDefault;
+  color: $black;
+  margin: 0 3px;
+}
+
+.detail-button{
+  width: 100%;
+  height: 80px;
+  background: $skyBlue;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.detail-button-link{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.detail-button-text{
+  @include  subHeader;
+  font-weight: $bold;
+  color: $white;
+  margin-right: 5px;
+}
+
+.detail-button-angle{
+  font-size: 2em;
+  color: $white;
+}
+
+.author-description-container{
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  margin-top: 50px;
+}
+
+.author-thumbnail{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: $lightBlue;
+}
+
+.author-description-texts{
+  width: 600px;
+  margin-left: 30px;
+}
+
+.author-name{
+  @include contentsDefault;
+  font-weight: $bold;
+  color: $black;
+  margin-bottom: 16px;
+}
+
+.author-detail{
+  @include contentsDefault;
+  color: $black;
+}
+
+.small-banner-container{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.small-ad-banner{
+  @extend .Ad-banner-small;
+  margin: 40px 0;
+}
+
+.article-adcards-container{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 40px;
+}
+
+.article-detail-ad{
+  @extend .Ad-card;
+}
+
+.article-tags-container{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.article-tag-text{
+  color: $black;
+  @include contentsSmall;
+  font-weight: $bold;
+  margin-right: 10px;
+}
+
+.blue-tag-container{
+  height: 35px;
+  margin-right: 10px;
+  padding: 10px;
+  background: $blue;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  &:last-child{
+    margin-right: 0;
+  }
+}
+
+.fa-white-tag{
+  @extend .yellow-tag;
+  color: $white;
+}
+
+.blue-tag-text{
+  @include caption;
+  font-weight: normal;
+  color: $white;
+}
+
+.blue-tag-link{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.article-blue-divider{
+  width: 100%;
+  height: 2px;
+  background: $lighterBlue;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.article-content-tags{
+  width: 100%;
+  margin:30px 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.white-tag-article{
+  @extend .white-tag;
+  border: $borderGray 0.5px solid;
+  margin-right: 10px;
+}
+
+.article-content-attempt{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
 }
