@@ -26,6 +26,12 @@
   background: palegreen;
 }
 
+.Ad-card-PR{
+  min-height: 310px;
+  max-width: 275px;
+  background: $white;
+}
+
 
 
 .Ad-sidebar-vertical{
@@ -35,7 +41,13 @@
 }
 
 .Article-card{
-  height: auto;
+  min-height: 320px;
+  max-width: 275px;
+  background: $white;
+}
+
+.Article-card-simple{
+  min-height: 285px;
   max-width: 275px;
   background: $white;
 }
@@ -132,7 +144,14 @@
   font-weight: $bold;
 }
 
-
+@mixin small($font: $mainFont) {
+  @include fontFallback($font);
+  font-size: 10px;
+  letter-spacing: 0.2px;
+  line-height: 18px;
+  word-wrap: break-word;
+  text-decoration: none;
+}
 
 // shadows
 @mixin smallBoxShadow {
