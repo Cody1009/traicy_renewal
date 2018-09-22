@@ -22,6 +22,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 // ################ header ###############
@@ -381,7 +382,7 @@ body {
 
 //####### イベントキャンペーン一覧######
 
-.events-campaigns-container {
+.campaigns-container {
   width: 100%;
   margin-top: 40px;
 }
@@ -1084,4 +1085,141 @@ body {
   @include small;
   color: $secondary;
   margin-right: 5px;
+}
+
+//#### airline 航空会社　詳細#####
+
+.airline-name-ja{
+  @extend .article-content-title;
+}
+
+.airline-name-en{
+  @include subHeader;
+  font-weight: $bold;
+  color: $black;
+}
+
+.company-desc-container{
+  width: 100%;
+  display: flex;
+  margin-top: 70px;
+}
+
+.images-container{
+  width: 300px;
+}
+
+.company-image{
+  width: 100%;
+  height: 250px;
+  background: $lighterBlue;
+}
+
+.official-link-button{
+  height: 40px;
+  width: auto;
+  padding: 10px;
+  margin: 30px 0;
+  display: inline-flex;
+  justify-content: center;
+  background: $lighterBlue;
+  border-radius: 5px;
+  position: relative;
+}
+
+.official-link-text{
+  @include body;
+  color: $white;
+  font-weight: normal;
+}
+
+.official-link-anchor{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.updated-at-text{
+  @include body;
+  color: $black;
+  font-weight: normal;
+}
+
+.company-detail-texts{
+  width: auto;
+  margin-left: 30px;
+}
+
+.company-detail-bold{
+  @include contentsDefault;
+  font-weight: $bold;
+  margin-bottom: 16px;
+}
+.detail-text-thin{
+  font-weight: normal;
+  color: $black;
+}
+.rating-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.rating-title-bold{
+  @extend .company-detail-bold;
+  margin-bottom: 0;
+  margin-right: 10px;
+}
+.stars-container{
+  display: inline-flex;
+  align-items: center;
+}
+
+.rating-star{
+  color: $yellow;
+  font-size: 15px;
+  margin-right: 3px;
+}
+
+.rating-text{
+  @include caption;
+  font-weight: normal;
+  color: $secondary;
+}
+
+.reservation-links-container{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.reservation-ad-box{
+  @extend .Reservation-link-box;
+  margin-bottom: 10px;
+}
+
+.reservation-ad-text{
+  @include caption;
+  font-weight: normal;
+  color: $secondary;
+}
+
+.reservation-angle-right{
+  color: $secondary;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+
+.attempt-related-article{
+  margin-top: 20px;
+}
+
+.attempt-text-related-article{
+  @extend .attempt-text;
+  margin-bottom: 16px;
 }

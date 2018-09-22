@@ -4,4 +4,7 @@ class TraicyController < ApplicationController
 
   def article_detail
   end
+
+  def airline
+  end
 end
