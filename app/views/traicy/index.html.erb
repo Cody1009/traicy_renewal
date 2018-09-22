@@ -1,772 +1,91 @@
-<body>
-<!--######## HEADER ########-->
-<header class="header">
-  <div class="Row">
-    <div class="compLogo">Traicy</div>
-    <div class="barAndAdvertize">
-      <div class="barItemsRow">
-        <div class="searchContainer">
-          <input title="search" type="search" class="searchInput">
-          <button type="submit" class="searchIconButton">
-            <i class="fas fa-search searchIcon"></i>
-          </button>
-        </div>
-        <div class="rowFlexEnd">
-          <a href="#"><i class="fab fa-twitter  customIcon"></i></a>
-          <a href="#"><i class="fab fa-facebook-f  customIcon"></i></a>
-          <a href="#"><i class="fas fa-rss  customIcon"></i></a>
-          <!--  TODO: Replace this with other icon-->
-          <a href="#"><i class="fas fa-rss  customIcon"></i></a>
-          <a href="#"><i class="fab fa-google-plus-g  customIcon"></i></a>
-          <!-- TODO: replace this line icon with svg -->
-          <a href="#"><i class="fab fa-line  customIcon"></i></a>
-        </div>
-        <a href="#" class="loginButton">
-          ログイン/新規会員登録
-        </a>
-      </div>
-      <div class="banner-advertizement-top">Ad image</div>
-    </div>
+<div class="page-container">
+  <div class="logo">
+    <%= image_tag 'comp-logo.svg' %>
+    <a href="https://www.traicy.com/" class="button-anchor"></a>
   </div>
-  <div class="menu-text-row">
-    <a href="#" class="menu-text">航空</a>
-    <a href="#" class="menu-text">鉄道</a>
-    <a href="#" class="menu-text">バス</a>
-    <a href="#" class="menu-text">ホテル</a>
-    <a href="#" class="menu-text">旅行会社</a>
-    <a href="#" class="menu-text">クレカ</a>
-    <a href="#" class="menu-text">自動車</a>
-    <a href="#" class="menu-text">コラム</a>
-    <a href="#" class="menu-text">本</a>
-    <a href="#" class="menu-text">一問一答</a>
-    <a href="#" class="menu-text">リリース</a>
-    <a href="#" class="menu-text">旅行情報</a>
-    <a href="#" class="menu-text">IR</a>
-    <a href="#" class="menu-text">トーク(掲示板)</a>
-    <a href="#" class="menu-text">航空券比較</a>
-    <a href="#" class="menu-text">海外WI-FI比較</a>
-  </div>
-
-</header>
-<!--######### Main Contents #######-->
-<div class="contents-container">
-  <div class="center-contents">
-    <!--    ######## 記事一覧#########-->
-    <div class="top-articles-container">
-      <div class="tabs-row">
-        <a href="#" class="tab-text">新着</a>
-        <a href="#" class="tab-text">セール</a>
-        <a href="#" class="tab-text">運航情報</a>
-        <a href="#" class="tab-text">旅行情報</a>
-        <a href="#" class="tab-text">乗り物・コラム</a>
-        <a href="#" class="tab-text">その他</a>
-        <a href="#" class="tab-text">リリース</a>
-      </div>
-      <div class="articles-content-row">
-        <div class="article-titles">
-          <a href="#" class="content-title">ANA、特別塗装機「HELLO 2020 JET」を1月29日就航　初便は東京/羽田～福岡線</a>
-          <a href="#" class="content-title">アリタリア航空-イタリア航空、ヨーロッパ行き全クラスが18%割引のクーポンコード配布中 明日1月16日まで</a>
-          <a href="#" class="content-title">アリタリア航空-イタリア航空、ヨーロッパ行き全クラスが18%割引のクーポンコード配布中 明日1月16日まで</a>
-          <a href="#" class="content-title">アリタリア航空-イタリア航空、ヨーロッパ行き全クラスが18%割引のクーポンコード配布中 明日1月16日まで</a>
-          <a href="#" class="content-title">アリタリア航空-イタリア航空、ヨーロッパ行き全クラスが18%割引のクーポンコード配布中 明日1月16日まで</a>
-          <a href="#" class="content-title">アリタリア航空-イタリア航空、ヨーロッパ行き全クラスが18%割引のクーポンコード配布中 明日1月16日まで</a>
-        </div>
-        <div class="featured-article">
-          <!--          TODO: replace this with image-->
-          <div class="image-container">
-            <img src="#" alt="image">
-          </div>
-
-          <a href="#" class="featured-article-title">タイガーエア・台湾、沖縄/那覇~高速線を増便 週5便に</a>
-
-          <div class="arrow-attempt">
-            <i class="fas fa-angle-right yellow-angle"></i>
-            <a href="#" class="attempt-text">乗り物・コラムをもっと見る</a>
-          </div>
-        </div>
-      </div>
+  <div class="section-top">
+    <div class="section-top-background">
+      <%= image_tag 'top-background.png' %>
     </div>
-    <!--    ############ traicy トーク 一覧 ############-->
-    <div class="middle-talk-container">
-      <div class="tabs-row">
-        <a href="#" class="tab-text-wide">旅行好きが集まる!コミュニティ! トライシートーク</a>
-        <a href="#" class="tab-text-talk">WI-FI</a>
-        <a href="#" class="tab-text-talk">航空券</a>
-      </div>
-      <div class="traicy-talk-container">
-        <div class="traicy-talk-contents">
-          <div class="tabs-row-talk">
-            <div class="talk-tab-left">
-              <p class="tab-title">Traicy Talk</p>
-              <a href="#" class="traicy-talk-tab">新着</a>
-              <a href="#" class="traicy-talk-tab">未回答</a>
-              <a href="#" class="traicy-talk-tab">回答済み</a>
-            </div>
-            <div class="arrow-attempt-row">
-              <i class="fas fa-angle-right yellow-angle"></i>
-              <a href="#" class="attempt-text-talk"> TraicyTalkをもっと見る</a>
-            </div>
-          </div>
-          <div class="talk-contents-row">
-            <i class="fas fa-angle-left angle-icon"></i>
-            <div class="talk-contents-left">
-              <div class="talk-text-icon-row">
-                <a href="#" class="content-title-talk">東京から長崎のランタンフェスティバルへ...</a>
-                <i class="far fa-comment comment-icon"></i>
-                <span class="comment-num">2</span>
-              </div>
-
-              <div class="talk-text-icon-row">
-                <a href="#" class="content-title-talk">東京から長崎のランタンフェスティバルへ...</a>
-                <i class="far fa-comment comment-icon"></i>
-                <span class="comment-num">2</span>
-              </div>
-              <div class="talk-text-icon-row">
-                <a href="#" class="content-title-talk">東京から長崎のランタンフェスティバルへ...</a>
-                <i class="far fa-comment comment-icon"></i>
-                <span class="comment-num ">2</span>
-              </div>
-              <div class="talk-text-icon-row">
-                <a href="#" class="content-title-talk">東京から長崎のランタンフェスティバルへ...</a>
-                <i class="far fa-comment comment-icon"></i>
-                <span class="comment-num">2</span>
-              </div>
-              <div class="talk-text-icon-row">
-                <a href="#" class="content-title-talk">東京から長崎のランタンフェスティバルへ...</a>
-                <i class="far fa-comment comment-icon"></i>
-                <span class="comment-num">2</span>
-              </div>
-
-
-            </div>
-            <div class="talk-contents-right">
-              <div class="talk-text-icon-row">
-                <a href="#" class="content-title-talk">東京から長崎のランタンフェスティバルへ...</a>
-                <i class="far fa-comment comment-icon"></i>
-                <span class="comment-num">2</span>
-              </div>
-
-              <div class="talk-text-icon-row">
-                <a href="#" class="content-title-talk">東京から長崎のランタンフェスティバルへ...</a>
-                <i class="far fa-comment comment-icon"></i>
-                <span class="comment-num">2</span>
-              </div>
-              <div class="talk-text-icon-row">
-                <a href="#" class="content-title-talk">東京から長崎のランタンフェスティバルへ...</a>
-                <i class="far fa-comment comment-icon"></i>
-                <span class="comment-num ">2</span>
-              </div>
-              <div class="talk-text-icon-row">
-                <a href="#" class="content-title-talk">東京から長崎のランタンフェスティバルへ...</a>
-                <i class="far fa-comment comment-icon"></i>
-                <span class="comment-num">2</span>
-              </div>
-              <div class="talk-text-icon-row">
-                <a href="#" class="content-title-talk">東京から長崎のランタンフェスティバルへ...</a>
-                <i class="far fa-comment comment-icon"></i>
-                <span class="comment-num">2</span>
-              </div>
-            </div>
-            <i class="fas fa-angle-right angle-icon"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!--    ############# イベント　キャンペーン情報一覧 ##########-->
-    <div class="events-campaigns-container">
-      <div class="headline-row">
-        <div class="headline-left">
-          <p class="headline-en">
-            EVENT・CAMPAIGN
-          </p>
-          <p class="headline-ja">
-            イベント・キャンペーン情報
-          </p>
-        </div>
-        <div class="headline-right">
-          <a href="#" class="headline-tab">開催中</a>
-          <a href="#" class="headline-tab">もうすぐ終了</a>
-        </div>
-      </div>
-      <div class="article-cards-list">
-        <div class="article-card">
-          <div class="article-image">
-            image
-          </div>
-          <div class="article-description">
-            <a href="#" class="article-card-title">
-              キャセイドラゴン航空、
-              福岡線1日2便化を記念し特別運賃 往復2.8万円から
-            </a>
-            <div class="article-info-row">
-              <p class="date">
-                1月1日~1月24日
-                <i class="far  fa-calendar-plus calender-icon"></i>
-              </p>
-              <p class="time-limit">
-                あと20日
-              </p>
-            </div>
-          </div>
-
-        </div>
-        <div class="article-card">
-          <div class="article-image">
-            image
-          </div>
-          <div class="article-description">
-            <a href="#" class="article-card-title">
-              キャセイドラゴン航空、
-              福岡線1日2便化を記念し特別運賃 往復2.8万円から
-            </a>
-            <div class="article-info-row">
-              <p class="date">
-                1月1日~1月24日
-                <i class="far  fa-calendar-plus calender-icon"></i>
-              </p>
-              <p class="time-limit">
-                あと20日
-              </p>
-            </div>
-          </div>
-
-        </div>
-        <div class="article-card">
-          <div class="article-image">
-            image
-          </div>
-          <div class="article-description">
-            <a href="#" class="article-card-title">
-              キャセイドラゴン航空、
-              福岡線1日2便化を記念し特別運賃 往復2.8万円から
-            </a>
-            <div class="article-info-row">
-              <p class="date">
-                1月1日~1月24日
-                <i class="far  fa-calendar-plus calender-icon"></i>
-              </p>
-              <p class="time-limit">
-                あと20日
-              </p>
-            </div>
-          </div>
-
-        </div>
-        <div class="article-card">
-          <div class="article-image">
-            image
-          </div>
-          <div class="article-description">
-            <a href="#" class="article-card-title">
-              キャセイドラゴン航空、
-              福岡線1日2便化を記念し特別運賃 往復2.8万円から
-            </a>
-            <div class="article-info-row">
-              <p class="date">
-                1月1日~1月24日
-                <i class="far  fa-calendar-plus calender-icon"></i>
-              </p>
-              <p class="time-limit">
-                あと20日
-              </p>
-            </div>
-          </div>
-
-        </div>
-        <div class="article-card">
-          <div class="article-image">
-            image
-          </div>
-          <div class="article-description">
-            <a href="#" class="article-card-title">
-              キャセイドラゴン航空、
-              福岡線1日2便化を記念し特別運賃 往復2.8万円から
-            </a>
-            <div class="article-info-row">
-              <p class="date">
-                1月1日~1月24日
-                <i class="far  fa-calendar-plus calender-icon"></i>
-              </p>
-              <p class="time-limit">
-                あと20日
-              </p>
-            </div>
-          </div>
-
-        </div>
-        <div class="article-card">
-          <div class="article-image">
-            image
-          </div>
-          <div class="article-description">
-            <a href="#" class="article-card-title">
-              キャセイドラゴン航空、
-              福岡線1日2便化を記念し特別運賃 往復2.8万円から
-            </a>
-            <div class="article-info-row">
-              <p class="date">
-                1月1日~1月24日
-                <i class="far  fa-calendar-plus calender-icon"></i>
-              </p>
-              <p class="time-limit">
-                あと20日
-              </p>
-            </div>
-          </div>
-
-        </div>
-        <div class="article-card">
-          <div class="article-image">
-            image
-          </div>
-          <div class="article-description">
-            <a href="#" class="article-card-title">
-              キャセイドラゴン航空、
-              福岡線1日2便化を記念し特別運賃 往復2.8万円から
-            </a>
-            <div class="article-info-row">
-              <p class="date">
-                1月1日~1月24日
-                <i class="far  fa-calendar-plus calender-icon"></i>
-              </p>
-              <p class="time-limit">
-                あと20日
-              </p>
-            </div>
-          </div>
-
-        </div>
-        <div class="article-card">
-          <div class="article-image">
-            image
-          </div>
-          <div class="article-description">
-            <a href="#" class="article-card-title">
-              キャセイドラゴン航空、
-              福岡線1日2便化を記念し特別運賃 往復2.8万円から
-            </a>
-            <div class="article-info-row">
-              <p class="date">
-                1月1日~1月24日
-                <i class="far  fa-calendar-plus calender-icon"></i>
-              </p>
-              <p class="time-limit">
-                あと20日
-              </p>
-            </div>
-          </div>
-
-        </div>
-        <div class="article-card">
-          <div class="article-image">
-            image
-          </div>
-          <div class="article-description">
-            <a href="#" class="article-card-title">
-              キャセイドラゴン航空、
-              福岡線1日2便化を記念し特別運賃 往復2.8万円から
-            </a>
-            <div class="article-info-row">
-              <p class="date">
-                1月1日~1月24日
-                <i class="far  fa-calendar-plus calender-icon"></i>
-              </p>
-              <p class="time-limit">
-                あと20日
-              </p>
-            </div>
-          </div>
-
-        </div>
-        <div class="article-card">
-          <div class="article-image">
-            image
-          </div>
-          <div class="article-description">
-            <a href="#" class="article-card-title">
-              キャセイドラゴン航空、
-              福岡線1日2便化を記念し特別運賃 往復2.8万円から
-            </a>
-            <div class="article-info-row">
-              <p class="date">
-                1月1日~1月24日
-                <i class="far  fa-calendar-plus calender-icon"></i>
-              </p>
-              <p class="time-limit">
-                あと20日
-              </p>
-            </div>
-          </div>
-
-        </div>
-        <div class="article-card">
-          <div class="article-image">
-            image
-          </div>
-          <div class="article-description">
-            <a href="#" class="article-card-title">
-              キャセイドラゴン航空、
-              福岡線1日2便化を記念し特別運賃 往復2.8万円から
-            </a>
-            <div class="article-info-row">
-              <p class="date">
-                1月1日~1月24日
-                <i class="far  fa-calendar-plus calender-icon"></i>
-              </p>
-              <p class="time-limit">
-                あと20日
-              </p>
-            </div>
-          </div>
-
-        </div>
-        <div class="article-card">
-          <div class="article-image">
-            image
-          </div>
-          <div class="article-description">
-            <a href="#" class="article-card-title">
-              キャセイドラゴン航空、
-              福岡線1日2便化を記念し特別運賃 往復2.8万円から
-            </a>
-            <div class="article-info-row">
-              <p class="date">
-                1月1日~1月24日
-                <i class="far  fa-calendar-plus calender-icon"></i>
-              </p>
-              <p class="time-limit">
-                あと20日
-              </p>
-            </div>
-          </div>
-
-        </div>
-        <div class="article-card">
-          <div class="article-image">
-            image
-          </div>
-          <div class="article-description">
-            <a href="#" class="article-card-title">
-              キャセイドラゴン航空、
-              福岡線1日2便化を記念し特別運賃 往復2.8万円から
-            </a>
-            <div class="article-info-row">
-              <p class="date">
-                1月1日~1月24日
-                <i class="far  fa-calendar-plus calender-icon"></i>
-              </p>
-              <p class="time-limit">
-                あと20日
-              </p>
-            </div>
-          </div>
-
-        </div>
-        <div class="article-card">
-          <div class="article-image">
-            image
-          </div>
-          <div class="article-description">
-            <a href="#" class="article-card-title">
-              キャセイドラゴン航空、
-              福岡線1日2便化を記念し特別運賃 往復2.8万円から
-            </a>
-            <div class="article-info-row">
-              <p class="date">
-                1月1日~1月24日
-                <i class="far  fa-calendar-plus calender-icon"></i>
-              </p>
-              <p class="time-limit">
-                あと20日
-              </p>
-            </div>
-          </div>
-
-        </div>
-        <div class="article-card">
-          <div class="article-image">
-            image
-          </div>
-          <div class="article-description">
-            <a href="#" class="article-card-title">
-              キャセイドラゴン航空、
-              福岡線1日2便化を記念し特別運賃 往復2.8万円から
-            </a>
-            <div class="article-info-row">
-              <p class="date">
-                1月1日~1月24日
-                <i class="far  fa-calendar-plus calender-icon"></i>
-              </p>
-              <p class="time-limit">
-                あと20日
-              </p>
-            </div>
-          </div>
-
-        </div>
-        <div class="article-card">
-          <div class="article-image">
-            image
-          </div>
-          <div class="article-description">
-            <a href="#" class="article-card-title">
-              キャセイドラゴン航空、
-              福岡線1日2便化を記念し特別運賃 往復2.8万円から
-            </a>
-            <div class="article-info-row">
-              <p class="date">
-                1月1日~1月24日
-                <i class="far  fa-calendar-plus calender-icon"></i>
-              </p>
-              <p class="time-limit">
-                あと20日
-              </p>
-            </div>
-          </div>
-
-        </div>
-        <div class="article-card">
-          <div class="article-image">
-            image
-          </div>
-          <div class="article-description">
-            <a href="#" class="article-card-title">
-              キャセイドラゴン航空、
-              福岡線1日2便化を記念し特別運賃 往復2.8万円から
-            </a>
-            <div class="article-info-row">
-              <p class="date">
-                1月1日~1月24日
-                <i class="far  fa-calendar-plus calender-icon"></i>
-              </p>
-              <p class="time-limit">
-                あと20日
-              </p>
-            </div>
-          </div>
-
-        </div>
-        <div class="article-card">
-          <div class="article-image">
-            image
-          </div>
-          <div class="article-description">
-            <a href="#" class="article-card-title">
-              キャセイドラゴン航空、
-              福岡線1日2便化を記念し特別運賃 往復2.8万円から
-            </a>
-            <div class="article-info-row">
-              <p class="date">
-                1月1日~1月24日
-                <i class="far  fa-calendar-plus calender-icon"></i>
-              </p>
-              <p class="time-limit">
-                あと20日
-              </p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-      <div class="campaign-attempt-layout">
-        <div class="arrow-attempt-row">
-          <i class="fas fa-angle-right yellow-angle"></i>
-          <a href="#" class="attempt-text-talk"> イベント・キャンペーン情報をもっと見る</a>
-        </div>
-      </div>
-    </div>
-
-    <!--    ####### バナー広告とinformationコンテナ#####-->
-    <div class="ad-infos-container">
-      <div class="banner-advertizement-bottom">Ad image</div>
-      <div class="information-container">
-        <div class="info-title-row">
-          <p class="info-title-en">INFORMATION</p>
-          <p class="info-title-ja">トライシーからのお知らせ</p>
-        </div>
-        <a href="#" class="info-content">2017年12月31日
-          【ご報告】「第12回 Traicyトークイベント＆懇親会」チャリティ販売について
-        </a>
-        <a href="#" class="info-content">2017年12月31日
-          【ご報告】「第12回 Traicyトークイベント＆懇親会」チャリティ販売について
-        </a>
-        <a href="#" class="info-content">2017年12月31日
-          【ご報告】「第12回 Traicyトークイベント＆懇親会」チャリティ販売について
-        </a>
-        <a href="#" class="info-content">2017年12月31日
-          【ご報告】「第12回 Traicyトークイベント＆懇親会」チャリティ販売について
-        </a>
-        <a href="#" class="info-content">2017年12月31日
-          【ご報告】「第12回 Traicyトークイベント＆懇親会」チャリティ販売について
-        </a>
-      </div>
-      <div class="banner-advertizement-bottom">Ad image</div>
-    </div>
-  </div>
-  <div class="right-contents">
-    <div class="sidebar-card-ad">ad card</div>
-    <div class="sidebar-card-ad">ad card</div>
-    <p class="headline-ja">人気記事</p>
-    <div class="popular-articles">
-      <div class="small-popular-article">
-        <div class="small-popular-article-photo">
-          <div class="popularity-tag">tag</div>
-          <img src="#">
-        </div>
-        <a href="#" class="small-popular-article-text">
-          世界最高の空港、6年連続でシンガポール・チャンギ国際空港　羽田は3位、中部は7位
-        </a>
-      </div>
-      <div class="small-popular-article">
-        <div class="small-popular-article-photo">
-          <div class="popularity-tag">tag</div>
-          <img src="#">
-        </div>
-        <a href="#" class="small-popular-article-text">
-          世界最高の空港、6年連続でシンガポール・チャンギ国際空港　羽田は3位、中部は7位
-        </a>
-      </div>
-      <div class="small-popular-article">
-        <div class="small-popular-article-photo">
-          <div class="popularity-tag">tag</div>
-          <img src="#">
-        </div>
-        <a href="#" class="small-popular-article-text">
-          世界最高の空港、6年連続でシンガポール・チャンギ国際空港　羽田は3位、中部は7位
-        </a>
-      </div>
-      <div class="small-popular-article">
-        <div class="small-popular-article-photo">
-          <div class="popularity-tag">tag</div>
-          <img src="#">
-        </div>
-        <a href="#" class="small-popular-article-text">
-          世界最高の空港、6年連続でシンガポール・チャンギ国際空港　羽田は3位、中部は7位
-        </a>
-      </div>
-      <div class="small-popular-article">
-        <div class="small-popular-article-photo">
-          <div class="popularity-tag">tag</div>
-          <img src="#">
-        </div>
-        <a href="#" class="small-popular-article-text">
-          世界最高の空港、6年連続でシンガポール・チャンギ国際空港　羽田は3位、中部は7位
-        </a>
-      </div>
-    </div>
-    <div class="sidebar-vertical-ad">ad big</div>
-    <p class="headline-ja">航空会社の記事一覧</p>
-    <div class="sidebar-tags-container">
-      <div class="white-tag">
-        <i class="fas fa-tag yellow-tag"></i>
-        <p class="white-tag-text">日本航空 (JAL)</p>
-        <a href="#" class="white-tag-anchor"></a>
-      </div>
-      <div class="white-tag">
-        <i class="fas fa-tag yellow-tag"></i>
-        <p class="white-tag-text">全日本空輸 (ANA)</p>
-        <a href="#" class="white-tag-anchor"></a>
-      </div>
-      <div class="white-tag">
-        <i class="fas fa-tag yellow-tag"></i>
-        <p class="white-tag-text">ジェットスター・ジャパン</p>
-        <a href="#" class="white-tag-anchor"></a>
-      </div>
-      <div class="white-tag">
-        <i class="fas fa-tag yellow-tag"></i>
-        <p class="white-tag-text">日本航空 (JAL)</p>
-        <a href="#" class="white-tag-anchor"></a>
-      </div>
-      <div class="white-tag">
-        <i class="fas fa-tag yellow-tag"></i>
-        <p class="white-tag-text">日本航空 (JAL)</p>
-        <a href="#" class="white-tag-anchor"></a>
-      </div>
-      <div class="white-tag">
-        <i class="fas fa-tag yellow-tag"></i>
-        <p class="white-tag-text">日本航空 (JAL)</p>
-        <a href="#" class="white-tag-anchor"></a>
-      </div>
-      <div class="white-tag">
-        <i class="fas fa-tag yellow-tag"></i>
-        <p class="white-tag-text">日本航空 (JAL)</p>
-        <a href="#" class="white-tag-anchor"></a>
-      </div>
-      <div class="white-tag">
-        <i class="fas fa-tag yellow-tag"></i>
-        <p class="white-tag-text">日本航空 (JAL)</p>
-        <a href="#" class="white-tag-anchor"></a>
-      </div>
-    </div>
-    <div class="tag-attempt-container">
-      <div class="arrow-attempt">
-        <i class="fas fa-angle-right yellow-angle"></i>
-        <a href="#" class="attempt-text">乗り物・コラムをもっと見る</a>
-      </div>
-    </div>
-    <div class="sidebar-recruit-card">
-      <div class="recruit-section-top">
-        <p class="recruit-top-text">デザイナ・エンジニア募集中</p>
-      </div>
-      <div class="recruit-section-center">
-        <p class="recruit-center-text">言語: PHP/Ruby</p>
-        <p class="recruit-center-text">雇用: アルバイト・インターン</p>
-        <p class="recruit-center-text">時給: 1000円~</p>
-      </div>
-      <div class="recruit-section-bottom">
-        <img src="#" alt="" class="recruit-logo">
-        ロゴ
-      </div>
-    </div>
-    <p class="headline-ja">メールマガジンを登録する</p>
-
-    <div class="sidebar-mail-register">
-      <p class="mail-register-text">Traicyのメルマガでは以下の情報などをお届けしています。</p>
-      <p class="mail-register-description">
-        ・選りすぐりのデイリーニュース
+    <div class="section-top-desc">
+      <p class="section-top-title">
+        お得な旅は、
+        <br>
+        トライシー。
       </p>
-      <p class="mail-register-description">
-        ・メルマガ限定クーポン
+      <p class="section-top-small">
+        お得な航空券セールが「探せる」「分かる」「買える」、
+        <br>
+        スマホアプリが2018年度冬登場予定。事前登録でいち早く
+        <br>
+        アプリを体験しよう。
       </p>
-      <p class="mail-register-description">
-        ・激安セール開催の案内
-      </p>
-      <div class="mail-input-container">
-        <input type="text" class="mail-register-input" title="mail-register" placeholder="メールアドレス">
-        <button type="submit" class="mail-register-button">登録</button>
-      </div>
-
-      <p class="mail-register-text">お持ちのアカウントで登録する</p>
-      <div class="sns-logos-row">
-        <!--        TODO: replace these icons with circular one if needed-->
-        <i class="fab fa-twitter-square mail-register-twitter"></i>
-        <i class="fab fa-facebook-square mail-register-facebook"></i>
-        <i class="fab fa-google-plus mail-register-google"></i>
-        <i class="fab fa-yahoo mail-register-yahoo"></i>
+      <div class="section-top-button">
+        <a href="https://goo.gl/forms/njiOOrinXeeYBJue2" class="button-anchor"></a>
+        <p class="section-top-button-text">無料で事前登録する</p>
       </div>
     </div>
-    <div class="sidebar-card-ad">ad card</div>
+    <div class="section-top-app-image">
+      <%= image_tag 'top-app.svg' %>
+    </div>
+  </div>
+  <p class="app-feat-text">トライシーアプリの特徴</p>
+  <div class="search-section">
+    <p class="common-section-title">
+      お得なセールが
+      <br>
+      <span class="common-section-span">探せる!</span>
+    </p>
+    <p class="common-section-body">
+      掲載航空会社100社以上。
+      <br>
+      日本に就航する全ての航空会社のセールが探せる。
+    </p>
+  </div>
 
+  <div class="detect-section">
+    <div class="detect-app-image">
+      <%= image_tag 'detect-sale.png' %>
+    </div>
+    <div class="detect-section-desc">
+      <p class="common-section-title">
+        お得なセールが
+        <br>
+        <span class="common-section-span">わかる!</span>
+      </p>
+      <p class="common-section-body">
+        編集部が毎日のセールの中からお得なセールを厳選。
+        <br>
+        「得」印がついているから、もう迷わない。
+      </p>
+    </div>
   </div>
-</div>
-<!--######## フッター ######-->
-<footer class="footer">
-  <div class="footer-menu-row">
-    <a href="#" class="footer-menu">お知らせ |</a>
-    <a href="#" class="footer-menu"> 利用規約 |</a>
-    <a href="#" class="footer-menu">配信先一覧 |</a>
-    <a href="#" class="footer-menu">ライター一覧 |</a>
-    <a href="#" class="footer-menu">広告掲載 |</a>
-    <a href="#" class="footer-menu">ブロガーネットワーク登録 |</a>
-    <a href="#" class="footer-menu">メルマガ登録 |</a>
-    <a href="#" class="footer-menu">LINE登録 |</a>
-    <a href="#" class="footer-menu">採用情報 |</a>
-    <a href="#" class="footer-menu">運営会社情報 |</a>
-    <a href="#" class="footer-menu">お問い合わせ</a>
+
+  <div class="buy-section">
+    <div class="buy-section-desc">
+      <p class="common-section-title">
+        お得なセールが
+        <br>
+        <span class="common-section-span">買える!</span>
+      </p>
+      <p class="common-section-body">
+        買いたいセールの開始・終了時刻をお知らせ。
+        <br>
+        売り切れる前に、セールが買えるようになります。
+      </p>
+    </div>
+    <div class="buy-app-image">
+      <%= image_tag 'buy-sales.png' %>
+    </div>
   </div>
-  <p class="copyright">
-    Copyright(c) traicy, Inc. All rights reserved.
+
+  <div class="bottom-button">
+    <a href="https://goo.gl/forms/njiOOrinXeeYBJue2" class="button-anchor"></a>
+    <p class="bottom-button-text">無料で事前登録する</p>
+  </div>
+  <p class="bottom-promote-text">
+    登録メールアドレスにアプリの
+    <br>
+    最新情報をお届けします。
   </p>
-</footer>
-</body>
+</div>

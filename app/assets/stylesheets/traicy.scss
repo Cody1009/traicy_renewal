@@ -1,1225 +1,166 @@
-// Place all the styles related to the traicy controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 @import "./variables";
-@import "./mixins.scss";
-
-//#######common####
-
-.content-title-common {
-  display: inline-block;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
-  @include body;
-  color: $black;
-  width: 100%;
+@import "./mixins";
+// common
+* {
+  box-sizing: border-box;
 }
-
-body {
-  background: $paleBlue;
-  // TODO: set viewport width 1520px
-  width: 1520px;
+.button-common-style {
+  background: $gradationYellow;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  align-items: center;
-}
-
-// ################ header ###############
-.header {
-  width: 100%;
-  background: $white;
-  height: 240px;
-  padding: 20px $desktop-padding-horizon;
-  margin: 0 auto;
-}
-
-.Row {
-  @extend .Row;
-  align-items: flex-start;
-  justify-content: space-between;
-}
-
-.compLogo {
-  height: 90px;
-  width: 225px;
-  margin: 50px 0 40px 0;
-  background: paleturquoise;
-}
-
-.customIcon {
-  color: $black;
-  margin: 0 8px;
-  font-size: 1.4em;
-}
-
-.barAndAdvertize {
-  display: flex;
-  align-items: flex-end;
-  flex-direction: column;
-  margin-bottom: 15px;
-}
-
-.barItemsRow {
-  @extend .Row;
-  align-items: center;
-}
-
-.rowFlexEnd {
-  @extend .Row;
-  align-items: flex-end;
-}
-
-.searchContainer {
   position: relative;
-}
-
-.searchInput {
-  height: 30px;
-  width: 250px;
-  padding-left: 10px;
-  border-radius: 20px;
-  border: 1px solid $white;
-  background: $lightGray;
-  margin-right: 10px;
-}
-
-.searchIconButton {
-  position: absolute;
-  border: none;
-  background: rgba(255, 0, 0, 0);
-  top: 5px;
-  left: 212px;
-  cursor: pointer;
-  height: 23px;
-  width: 25px;
-}
-
-.searchIcon {
-  z-index: $highZIndex;
-  font-family: FontAwesome;
-  font-size: 17px;
-  background: rgba(255, 0, 0, 0);
-  border: none;
-  height: 15px;
-  width: 15px;
-}
-
-.loginButton {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 210px;
-  height: 50px;
-  // erase padding top
-  margin-top: -20px;
-  margin-left: 15px;
-  background: $lightBlue;
-  color: $white;
-  text-decoration: none;
-  font-weight: $bold;
-}
-
-.banner-advertizement-top {
-  @extend .Ad-banner;
-}
-
-.menu-text-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.menu-text {
-  @include body;
-  display: inline-block;
-  text-decoration: none;
-  color: $black;
-  font-weight: $bold;
-}
-
-// ########## Contents #########
-
-.sky-background {
-  //background-image: url("data:image/jpeg;base64,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");
-}
-
-.contents-container {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  padding: 30px $desktop-padding-horizon 40px $desktop-padding-horizon;
-  margin: 0 auto;
-}
-
-.center-contents {
-  width: 865px;
-}
-
-.top-articles-container {
-  width: 100%;
-  height: 430px;
-  background: $white;
-}
-
-.tabs-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.tab-text {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 40px;
-  width: 100%;
-  max-width: 124px;
-  color: $white;
-  @include body;
-  background: $blue;
-  border-right: $white solid 2px;
-  // TODO: check php file and see how tabs are focused
-  &:active {
-    background: $white;
-    color: $black;
-  }
-  &:last-child {
-    border: none;
+  &:hover {
+    opacity: 0.6;
+    cursor: pointer;
   }
 }
 
-.articles-content-row {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  padding: 20px 30px 30px 25px;
-}
-
-.article-titles {
-  max-width: 585px;
-  width: 90%;
-}
-
-.content-title {
-  @extend .content-title-common;
-  @include title-border-bottom;
-  width: 90%;
-}
-
-.featured-article {
-  max-width: 195px;
-}
-
-.image-container {
-  background: $paleBlue;
-  width: 100%;
-  height: 130px;
-  margin-bottom: 10px;
-}
-
-.featured-article-title {
-  @include body;
-  display: inline-block;
-  color: $black;
-  margin-bottom: 70px;
-}
-
-.arrow-attempt {
-  display: inline-flex;
-  align-items: center;
-}
-
-.yellow-angle {
-  color: $yellow;
-  font-size: 14px;
-  margin-right: 2px;
-}
-
-.attempt-text {
-  @extend .featured-article-title;
-  margin-bottom: 0;
-}
-
-.middle-talk-container {
-  background: $white;
-  width: 100%;
-  max-width: 865px;
-  height: 360px;
-  margin-top: 25px;
-}
-
-.tab-text-talk {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  background: $lightBlue;
-  height: 40px;
-  min-width: 174px;
-  @include body;
-  padding: 0 66px 0 66px;
-  color: $white;
-  border-right: $white solid 2px;
-  &:active {
-    background: $white;
-    color: $black;
-  }
-  &:last-child {
-    border: none;
-  }
-}
-
-.tab-text-wide {
-  @extend .tab-text-talk;
-  padding: 0 92px;
-}
-
-.traicy-talk-container {
-  max-width: 865px;
-  width: 100%;
-  padding: 3px;
-}
-
-.traicy-talk-contents {
-  background: $paleBlue;
-  padding: 2px 5px 6px 5px;
-  height: 100%;
-}
-
-.tabs-row-talk {
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.talk-tab-left {
-  @extend .tabs-row-talk;
-  justify-content: flex-start;
-}
-
-.tab-title {
-  @include subHeader($subFont);
-  color: $blue;
-  margin-right: 36px;
-}
-
-.traicy-talk-tab {
-  display: inline-block;
-  background: $paleBlue;
-  color: $blue;
-  @include body;
-  height: 40px;
-  margin-right: 20px;
-  padding: 10px 10px 0 10px;
-  border-radius: 3px;
-  &:active {
-    background: $white;
-    color: $black;
-  }
-}
-
-.arrow-attempt-row {
-  @extend .arrow-attempt;
-  min-width: 250px;
-}
-
-.attempt-text-talk {
-  @extend .attempt-text;
-  width: 100%;
-}
-
-.talk-contents-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  background: $white;
-  padding: 26px 24px;
-}
-
-.content-title-talk {
-  @extend .content-title;
-  margin-bottom: 12px;
-  margin-right: 10px;
-}
-
-.angle-icon {
-  font-size: 30px;
-  color: $lightBlue;
-  cursor: pointer;
-}
-
-.talk-contents-left {
-  margin-left: 14px;
-  width: 330px;
-}
-
-.talk-contents-right {
-  margin-right: 14px;
-  width: 330px;
-}
-
-.talk-contents-row {
-  display: inline-flex;
-  align-items: center;
-}
-
-.talk-text-icon-row {
-  display: inline-flex;
-  align-items: flex-start;
-}
-
-.comment-icon {
-  color: $blue;
-}
-
-.comment-num {
-  @include body;
-  color: $blue;
-  margin-left: 6px;
-}
-
-//####### イベントキャンペーン一覧######
-
-.campaigns-container {
-  width: 100%;
-  margin-top: 40px;
-}
-
-.headline-row {
-  display: inline-flex;
-  justify-content: space-between;
-  width: 100%;
-  margin-bottom: 28px;
-}
-
-.headline-left {
-  display: inline-flex;
-  align-items: center;
-}
-
-.headline-en {
-  @include title;
-  color: $black;
-  margin-right: 22px;
-}
-
-.headline-ja {
-  @include body;
-  color: $black;
-}
-
-.headline-right {
-  display: inline-flex;
-  align-items: center;
-}
-
-.headline-tab {
-  display: inline-block;
-  @include body;
-  color: $black;
-  margin-left: 26px;
-  height: 26px;
-  &:active {
-    border-bottom: $black solid 3px;
-  }
-}
-
-.article-cards-list {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.article-card {
-  @extend .Article-card;
-  margin-bottom: 20px;
-}
-
-.article-image {
-  width: 100%;
-  height: 180px;
-  background: $blue;
-}
-.article-description {
-  padding: 18px 24px 24px 24px;
-}
-
-.article-card-title {
-  @include body;
-  color: $black;
-  display: inline-block;
-  margin-bottom: 16px;
-  width: 100%;
-}
-
-.article-info-row {
-  display: inline-flex;
-  align-items: center;
-  width: 100%;
-  justify-content: space-between;
-}
-
-.date {
-  @include caption;
-  color: $gray;
-}
-
-.calender-icon {
-  font-size: 12px;
-  color: $gray;
-}
-
-.time-limit {
-  @include caption;
-  color: $gray;
-  font-weight: $bold;
-  min-width: 56px;
-}
-
-.campaign-attempt-layout {
-  display: inline-flex;
-  width: 100%;
-  justify-content: flex-end;
-}
-
-.ad-infos-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  margin-top: 35px;
-}
-
-.banner-advertizement-bottom {
-  @extend .Ad-banner;
-  display: inline-block;
-  margin-bottom: 30px;
-}
-
-.information-container {
-  width: 100%;
-  height: 315px;
-  background: white;
-  padding: 30px;
-}
-
-.info-title-row {
-  display: flex;
-  align-items: center;
-  margin-bottom: 26px;
-}
-
-.info-title-en {
-  @include title;
-  color: $blue;
-  margin-right: 24px;
-}
-
-.info-title-ja {
-  @include body;
-  color: $blue;
-}
-
-.info-content {
-  @extend .content-title-common;
-  @include title-border-bottom;
-}
-
-// ######### サイドバー ########
-
-.right-contents {
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-}
-
-.sidebar-card-ad {
-  @extend .Ad-card;
-  margin-bottom: 25px;
-}
-
-.popular-articles {
-  width: 100%;
-  padding: 20px 18px;
-  background: $white;
-  margin-top: 16px;
-  margin-bottom: 25px;
-}
-
-.small-popular-article {
-  display: inline-flex;
-  justify-content: space-between;
-  margin-bottom: 16px;
-}
-
-.small-popular-article-photo {
-  width: 110px;
-  height: 80px;
-  position: relative;
-  background: $lightGray;
-}
-
-.popularity-tag {
-  width: 20px;
-  height: 20px;
-  background: $lightBlue;
+.button-anchor {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
 }
 
-.small-popular-article-text {
-  @include caption;
+.common-section-title {
+  @include title;
   color: $black;
+  margin-bottom: 40px;
+}
+
+.common-section-span {
+  color: $skyBlue;
+}
+
+.common-section-body{
+  @include body;
+  color: $black;
+}
+
+.page-container {
+  width: 1024px;
+  margin: 0 auto;
+}
+
+.logo {
+  height: 60px;
   width: 140px;
-  margin-left: 10px;
-}
-
-.sidebar-vertical-ad {
-  @extend .Ad-sidebar-vertical;
-  margin-bottom: 25px;
-}
-
-.sidebar-tags-container {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
   margin-top: 20px;
-}
-
-.white-tag {
-  display: inline-flex;
-  align-items: center;
-  padding: 10px;
-  margin-right: 10px;
-  background: $white;
+  margin-left: 20px;
   position: relative;
-  border-radius: 6px;
-  margin-bottom: 10px;
+  &:hover{
+    opacity: 0.6;
+  }
 }
 
-.yellow-tag {
-  font-size: 12px;
-  color: $yellow;
-  margin-right: 4px;
+.section-top {
+  width: 100%;
+  padding: 15px 90px 50px 90px;
+  display: flex;
+  position: relative;
 }
 
-.white-tag-text {
-  @include caption;
-  color: $black;
-}
-.white-tag-anchor {
+.section-top-background {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: $negativeZIndex;
 }
 
-.tag-attempt-container {
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
-  margin-top: 15px;
+.section-top-desc {
+  width: 360px;
 }
 
-.sidebar-recruit-card {
-  @extend .Ad-card;
-  background: $white;
-  margin: 25px 0;
-}
-.recruit-section-top {
-  height: 100px;
-  background: $lightBlue;
-  padding: 10px 5px;
-}
-
-.recruit-top-text {
+.section-top-title {
+  @include title;
   color: $white;
-  @include headline;
-  font-weight: $bold;
-  text-align: center;
-}
-
-.recruit-section-center {
-  padding: 5px 8px;
-  background: $blue;
-}
-
-.recruit-center-text {
-  color: $white;
-  @include smallTitle;
-}
-
-.recruit-section-bottom {
-  width: 100%;
-  display: inline-flex;
-  justify-content: center;
-  padding-top: 5px;
-}
-
-.sidebar-mail-register {
-  width: 100%;
-  margin: 25px 0;
-  padding: 20px;
-  background: $white;
-}
-
-.mail-register-text {
-  color: $black;
-  @include caption;
-  margin-bottom: 16px;
-}
-
-.mail-register-description {
-  @extend .mail-register-text;
-  margin-bottom: 0;
-}
-
-.mail-input-container {
-  width: 100%;
-  position: relative;
-}
-
-.mail-register-input {
-  @extend .searchInput;
-  width: 100%;
-  margin: 16px 0;
-  &::placeholder {
-    @include caption;
-    color: $heavyGray;
-  }
-}
-.mail-register-button {
-  height: 28px;
-  width: 60px;
-  padding: 5px 10px;
-  border-radius: 0 20px 20px 0;
-  color: $white;
-  font-size: 12px;
-  font-family: $mainFont;
-  position: absolute;
-  border: none;
-  background: $blue;
-  top: 17px;
-  left: 200px;
-  cursor: pointer;
-}
-
-.sns-logos-row {
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.mail-register-twitter {
-  color: $twitter;
-  font-size: 48px;
-}
-.mail-register-facebook {
-  color: $facebook;
-  font-size: 48px;
-}
-.mail-register-google {
-  color: $google;
-  font-size: 48px;
-}
-.mail-register-yahoo {
-  color: $yahoo;
-  font-size: 48px;
-}
-
-//###### フッター ######
-
-.footer {
-  width: 100%;
-  height: 120px;
-  padding: 25px $desktop-padding-horizon 35px $desktop-padding-horizon;
-  background: $white;
-}
-
-.footer-menu-row {
-  width: 100%;
-  display: inline-flex;
-  align-items: center;
-}
-
-.footer-menu {
-  @include caption;
-  color: $gray;
-  margin-right: 10px;
-  margin-bottom: 12px;
-}
-
-.copyright {
-  @include caption;
-  color: $gray;
-}
-
-//###### 記事内容 コンポーネント ######
-
-.article-container {
-  width: 100%;
-  padding: 40px;
-  background: $white;
-}
-
-.article-content-title {
-  @include articleTitle;
-  color: $black;
-  font-weight: $bold;
-  margin-bottom: 30px;
-}
-
-.article-content-author-row {
-  width: 100%;
-  display: inline-flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.article-created-at {
-  @include contentsSmall;
-}
-
-.article-content-link {
-  @include contentsSmall;
-  color: $lightBlue;
-}
-
-.article-content-image-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
   margin-top: 30px;
   margin-bottom: 40px;
 }
 
-.article-content-image {
-  height: 400px;
-  width: 600px;
-  background: palegreen;
-  margin-bottom: 20px;
-}
-
-.article-image-caption {
-  @include contentsSmall;
-}
-
-.article-table-contents {
-  width: 785px;
-  padding: 20px 24px;
-  background: $paleBlue;
-  display: inline-flex;
-  flex-direction: column;
-}
-
-.table-of-contents-row {
-  @extend .Row;
-  justify-content: flex-start;
-}
-
-.vertical-bar {
-  height: 22px;
-  width: 4px;
-  margin-right: 12px;
-  margin-bottom: 18px;
-  background: $blue;
-}
-
-.table-of-contents-head {
-  @include contentsDefault;
-  font-weight: $bold;
-}
-
-.table-of-contents-text {
-  @include contentsDefault;
-  color: $lightBlue;
-  margin-bottom: 10px;
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
-.article-content-text {
-  @include contentsDefault;
-  color: $black;
-}
-
-.article-text-container {
-  width: 100%;
-  margin: 30px 0 40px 0;
-}
-
-.next-article-row {
-  @extend .Row;
-  display: inline-flex;
-}
-
-.next-article-link {
-  @include contentsDefault;
-  color: $lightBlue;
-}
-
-.pagination-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 40px 0;
-}
-
-.pagination-angle {
-  color: $black;
-  font-size: 17px;
-}
-
-.pagination-box {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  margin: 0 4px;
-  background: $white;
-  color: $black;
-  @include contentsDefault;
-  text-decoration: none;
-  border: $lightGray solid 1px;
-
-  &:active {
-    background: $blue;
-    color: $white;
-    border: $blue solid 1px;
-  }
-}
-
-.pagination-text{
-  @include contentsDefault;
-  color: $black;
-  margin: 0 3px;
-}
-
-.detail-button{
-  width: 100%;
-  height: 80px;
-  background: $skyBlue;
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-
-.detail-button-link{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-.detail-button-text{
-  @include  subHeader;
-  font-weight: $bold;
+.section-top-small {
+  @include small;
   color: $white;
-  margin-right: 5px;
-}
-
-.detail-button-angle{
-  font-size: 2em;
-  color: $white;
-}
-
-.author-description-container{
-  width: 100%;
-  padding: 10px;
-  display: flex;
-  margin-top: 50px;
-}
-
-.author-thumbnail{
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background: $lightBlue;
-}
-
-.author-description-texts{
-  width: 600px;
-  margin-left: 30px;
-}
-
-.author-name{
-  @include contentsDefault;
-  font-weight: $bold;
-  color: $black;
-  margin-bottom: 16px;
-}
-
-.author-detail{
-  @include contentsDefault;
-  color: $black;
-}
-
-.small-banner-container{
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-
-.small-ad-banner{
-  @extend .Ad-banner-small;
-  margin: 40px 0;
-}
-
-.article-adcards-container{
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
   margin-bottom: 40px;
 }
 
-.article-detail-ad{
-  @extend .Ad-card;
+.section-top-button {
+  height: 45px;
+  width: 230px;
+  border-radius: 18px;
+  @extend .button-common-style;
 }
 
-.article-tags-container{
+.section-top-button-text {
+  @include middle;
+  color: $white;
+  font-weight: $bold;
+}
+
+.section-top-app-image {
+  margin-left: 240px;
+}
+
+.app-feat-text {
+  @include title;
+  color: $black;
+  border-bottom: $black 6px solid;
+  width: 365px;
+  margin: 0 auto 20px auto;
+}
+
+.search-section {
+  width: 100%;
+  height: 300px;
+  padding: 60px 90px;
+  background: image-url("detect-background.png");
+  z-index: $negativeZIndex;
+}
+
+.detect-section{
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  padding: 40px 90px;
 }
 
-.article-tag-text{
-  color: $black;
-  @include contentsSmall;
-  font-weight: $bold;
-  margin-right: 10px;
+.detect-section-desc{
+  width: 360px;
+  margin-left: 70px;
 }
 
-.blue-tag-container{
-  height: 35px;
-  margin-right: 10px;
-  padding: 10px;
-  background: $blue;
-  border-radius: 5px;
-  display: inline-flex;
+.buy-section{
+  width: 100%;
+  padding: 30px 90px;
+  background: $backgroundGray;
+  display: flex;
   align-items: center;
-  position: relative;
-  &:last-child{
-    margin-right: 0;
-  }
 }
 
-.fa-white-tag{
-  @extend .yellow-tag;
+.buy-app-image{
+  margin-left: 130px;
+}
+
+.bottom-button{
+  height: 70px;
+  width: 360px;
+  border-radius: 18px;
+  box-shadow: 0 4px 4px 0 rgba($black,0.5);
+  margin: 30px auto;
+  @extend .button-common-style;
+}
+
+.bottom-button-text{
+  @include subTitle;
   color: $white;
 }
-
-.blue-tag-text{
-  @include caption;
-  font-weight: normal;
-  color: $white;
-}
-
-.blue-tag-link{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.article-blue-divider{
-  width: 100%;
-  height: 2px;
-  background: $lighterBlue;
-  margin-top: 40px;
-  margin-bottom: 20px;
-}
-
-.article-content-tags{
-  width: 100%;
-  margin:30px 0;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.white-tag-article{
-  @extend .white-tag;
-  border: $borderGray 0.5px solid;
-  margin-right: 10px;
-}
-
-.article-content-attempt{
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.article-card-simple{
-  @extend .Article-card-simple;
-  margin-bottom: 20px;
-}
-
-.ad-card-pr{
-  @extend .Ad-card-PR;
-  margin-bottom: 20px;
-}
-
-.ad-card-caption{
-  @include caption;
-  color: $secondary;
-}
-
-.recommend-text-row{
-  display: flex;
-  align-items: center;
-}
-
-.recommend-text{
-  @include small;
-  color: $secondary;
-  margin-right: 5px;
-}
-
-//#### airline 航空会社　詳細#####
-
-.airline-name-ja{
-  @extend .article-content-title;
-}
-
-.airline-name-en{
-  @include subHeader;
-  font-weight: $bold;
+.bottom-promote-text{
+  @include middle;
   color: $black;
-}
-
-.company-desc-container{
-  width: 100%;
-  display: flex;
-  margin-top: 70px;
-}
-
-.images-container{
-  width: 300px;
-}
-
-.company-image{
-  width: 100%;
-  height: 250px;
-  background: $lighterBlue;
-}
-
-.official-link-button{
-  height: 40px;
-  width: auto;
-  padding: 10px;
-  margin: 30px 0;
-  display: inline-flex;
-  justify-content: center;
-  background: $lighterBlue;
-  border-radius: 5px;
-  position: relative;
-}
-
-.official-link-text{
-  @include body;
-  color: $white;
-  font-weight: normal;
-}
-
-.official-link-anchor{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.updated-at-text{
-  @include body;
-  color: $black;
-  font-weight: normal;
-}
-
-.company-detail-texts{
-  width: auto;
-  margin-left: 30px;
-}
-
-.company-detail-bold{
-  @include contentsDefault;
-  font-weight: $bold;
-  margin-bottom: 16px;
-}
-.detail-text-thin{
-  font-weight: normal;
-  color: $black;
-}
-.rating-container {
-  display: flex;
-  align-items: center;
-  margin-bottom: 16px;
-}
-
-.rating-title-bold{
-  @extend .company-detail-bold;
-  margin-bottom: 0;
-  margin-right: 10px;
-}
-.stars-container{
-  display: inline-flex;
-  align-items: center;
-}
-
-.rating-star{
-  color: $yellow;
-  font-size: 15px;
-  margin-right: 3px;
-}
-
-.rating-text{
-  @include caption;
-  font-weight: normal;
-  color: $secondary;
-}
-
-.reservation-links-container{
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 20px;
-}
-
-.reservation-ad-box{
-  @extend .Reservation-link-box;
-  margin-bottom: 10px;
-}
-
-.reservation-ad-text{
-  @include caption;
-  font-weight: normal;
-  color: $secondary;
-}
-
-.reservation-angle-right{
-  color: $secondary;
-  font-weight: bold;
-  font-size: 12px;
-}
-
-
-.attempt-related-article{
-  margin-top: 20px;
-}
-
-.attempt-text-related-article{
-  @extend .attempt-text;
-  margin-bottom: 16px;
+  text-align: center;
+  margin-bottom:40px;
 }

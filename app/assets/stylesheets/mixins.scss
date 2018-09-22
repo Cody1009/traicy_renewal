@@ -1,159 +1,43 @@
-@import './variables.scss';
+@import "./variables.scss";
 
-.Row{
-  display: flex;
-  align-items: center;
-}
 
-.Ad-banner {
-  width: 80%;
-  max-width: 730px;
-  height: 90px;
-  margin-top: 25px;
-  background: palevioletred;
-}
-
-.Ad-banner-small{
-  height: 75px;
-  width: 380px;
-  border-radius: 5px;
-  background: palegoldenrod;
-}
-.Ad-card{
-  width: 100%;
-  max-width: 300px;
-  height: 250px;
-  background: palegreen;
-}
-
-.Ad-card-PR{
-  min-height: 310px;
-  max-width: 275px;
-  background: $white;
-}
-
-.Ad-sidebar-vertical{
-  height: 600px;
-  width: 300px;
-  background: $lightBlue;
-}
-
-.Article-card{
-  min-height: 320px;
-  max-width: 275px;
-  background: $white;
-}
-
-.Article-card-simple{
-  min-height: 285px;
-  max-width: 275px;
-  background: $white;
-}
-
-.Reservation-link-box{
-  height: 50px;
-  width: 120px;
-  border-radius: 5px;
-  border:  $disabled solid 0.5px;
-}
-
-@mixin title-border-bottom{
-  border-bottom: $lightGray solid 1px;
-}
-
-@mixin fontFallback($font: $mainFont) {
-  font-family: $font, 'sans-serif';
-}
-@mixin articleTitle($font: $mainFont) {
-  @include fontFallback($font);
+@mixin title {
+  font-family: $mainFont;
   font-size: 30px;
-  letter-spacing: 1.5px;
-  line-height: 46px;
+  font-weight: $bold;
+  letter-spacing: 3px;
+  line-height: 43px;
   word-wrap: break-word;
 }
 
-@mixin headline($font: $mainFont) {
-  @include fontFallback($font);
-  font-size: 26px;
-  letter-spacing: 1px;
-  line-height: 42px;
-  word-wrap: break-word;
-}
-
-
-
-@mixin subHeader($font: $mainFont) {
-  @include fontFallback($font);
+@mixin subTitle {
+  font-family: $mainFont;
   font-size: 24px;
-  letter-spacing: 0.25px;
+  letter-spacing: -0.13px;
+  word-wrap: break-word;
+  line-height: 36px;
+}
+
+@mixin body {
+  font-family: $mainFont;
+  font-size: 20px;
+  letter-spacing: 3px;
   line-height: 30px;
   word-wrap: break-word;
-  text-decoration: none;
-  font-weight: 500;
 }
 
-@mixin title($font: $mainFont) {
-  @include fontFallback($font);
-  font-size: 20px;
-  letter-spacing: 0.5px;
-  line-height: 38px;
-  word-wrap: break-word;
-  font-weight: $bold;
-}
-
-@mixin smallTitle($font: $mainFont) {
-  @include fontFallback($font);
-  font-size: 17px;
-  letter-spacing: 0.5px;
-  line-height: 28px;
+@mixin middle {
+  font-family: $mainFont;
+  font-size: 18px;
+  letter-spacing: -0.1px;
+  line-height: 27px;
   word-wrap: break-word;
 }
 
-@mixin body($font: $mainFont) {
-  @include fontFallback($font);
-  font-size: 14px;
-  letter-spacing: 0.25px;
-  line-height: 20px;
+@mixin small {
+  font-family: $mainFont;
+  font-size: 13px;
+  letter-spacing: -0.1px;
+  line-height: 25px;
   word-wrap: break-word;
-  text-decoration: none;
-  font-weight: $bold;
-}
-
-@mixin contentsDefault($font: $mainFont) {
-  @include fontFallback($font);
-  font-size: 17px;
-  letter-spacing: 0.4px;
-  line-height: 24px;
-  word-wrap: break-word;
-  text-decoration: none;
-  color: $black;
-}
-
-@mixin contentsSmall($font: $mainFont) {
-  @include fontFallback($font);
-  font-size: 14px;
-  letter-spacing: 0.25px;
-  line-height: 20px;
-  word-wrap: break-word;
-  text-decoration: none;
-  color: $black;
-}
-
-@mixin caption($font: $mainFont) {
-  @include fontFallback($font);
-  font-size: 12px;
-  letter-spacing: 0.25px;
-  line-height: 22px;
-  word-wrap: break-word;
-  text-decoration: none;
-  font-weight: $bold;
-}
-
-@mixin small($font: $mainFont) {
-  @include fontFallback($font);
-  font-size: 10px;
-  letter-spacing: 0.2px;
-  line-height: 18px;
-  word-wrap: break-word;
-  text-decoration: none;
 }
